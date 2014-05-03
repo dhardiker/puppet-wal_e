@@ -15,6 +15,7 @@ class wal_e::master {
   }
 
   file_line { 'postgres_conf_1':
+    require => Package['postgresql'],
     path => "${wal_e::pgconf}/postgresql.conf",
     line => 'wal_level = archive # hot_standby in 9.0+ is also acceptable',
   } ->
