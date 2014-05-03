@@ -43,6 +43,10 @@ class wal_e (
   $access_key = undef,
   $secret_key = undef,
   $s3_prefix  = undef,
+  $master_cron_backup_hour   = '8',
+  $master_cron_backup_minute = '0',
+  $master_cron_delete_hour   = '9',
+  $master_cron_delete_minute = '0',
 ) {
 
   if $role == 'master' {
