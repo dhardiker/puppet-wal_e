@@ -12,6 +12,7 @@ class wal_e::master {
     user    => 'postgres',
     minute  => $wal_e::master_cron_delete_minute,
     hour    => $wal_e::master_cron_delete_hour,
+  }
 
   file_line { 'postgres_conf_1':
     path => "${wal_e::pgconf}/postgresql.conf",
