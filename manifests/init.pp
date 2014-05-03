@@ -39,6 +39,7 @@ class wal_e (
   $role       = 'slave',
   $rootdir    = '/etc/wal-e.d',
   $pgdata     = '/var/lib/postgresql/9.2/main',
+  $pgconf     = '/etc/postgresql/9.2/main',
   $master     = undef,
   $access_key = undef,
   $secret_key = undef,
