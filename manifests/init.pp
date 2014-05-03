@@ -59,7 +59,7 @@ class wal_e (
   include wal_e::deps
 
   package { 'wal-e':
-    name     => 'git+https://github.com/wal-e/wal-e',
+    name     => 'wal-e',
     provider => 'pip',
     require  => Class['wal_e::deps'],
   }
