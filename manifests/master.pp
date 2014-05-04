@@ -5,12 +5,14 @@ class wal_e::master {
     user    => 'postgres',
     minute  => $wal_e::master_cron_backup_minute,
     hour    => $wal_e::master_cron_backup_hour,
+    require => Package['postgresql'],
   }
   cron { 'wal_e-delete-retain':
     command => "/usr/bin/envdir ${wal_e::rootdir}/env /usr/local/bin/wal-e delete --confirm retain 5",
     user    => 'postgres',
     minute  => $wal_e::master_cron_delete_minute,
     hour    => $wal_e::master_cron_delete_hour,
+    require => Package['postgresql'],
   }
 
   file_line { 'postgres_conf_1':

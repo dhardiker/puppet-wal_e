@@ -91,5 +91,6 @@ class wal_e (
     owner  => 'root',
     group  => 'postgres',
     mode   => '0640',
+    require => Package['postgresql'],
   }
 }
